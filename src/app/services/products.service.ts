@@ -10,7 +10,7 @@ import { throwError, zip } from 'rxjs';
 
 import { Product, CreateProductDTO, updateProductDTO } from './../models/product.model';
 
-import { environment } from '../../environments/environment';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -61,7 +61,7 @@ export class ProductsService {
           };
         })
       )
-    );;
+    );
   }
 
   fetchReadAndUpdate(id: string, dto: updateProductDTO){
