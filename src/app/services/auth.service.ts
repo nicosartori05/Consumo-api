@@ -31,5 +31,12 @@ export class AuthService {
       // },
     });
   }
+
+  loginAndGet(email: string, password: string){
+    return this.login(email,password)
+    .pipe(
+      switchMap(() => this.profile()),
+    )
+  }
   
 }
