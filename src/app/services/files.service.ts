@@ -5,6 +5,12 @@ import { tap,map } from 'rxjs';
 
 import { environment } from './../../environments/environment';
 
+
+interface File {
+  originalname: string,
+  filename: string,
+  location: string,
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +34,10 @@ export class FilesService {
   uploadFile(file: Blob){
     const dto = new FormData();
     dto.append('file', file);
-    return this.http.post()
+    return this.http.post<File>(`${this.apiUrl}/upload`,dto,{
+      // headers: {
+      //   'Content-Type': "multipart/form-data"
+      // }
+    })
   }
 }
