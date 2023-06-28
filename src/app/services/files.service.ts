@@ -37,7 +37,7 @@ export class FilesService {
     return this.http.post<File>(`${this.apiUrl}/upload`,dto,{
       // headers: {
       //   'Content-Type': "multipart/form-data"
-      // }
+      // } 
     })
   }
 }
